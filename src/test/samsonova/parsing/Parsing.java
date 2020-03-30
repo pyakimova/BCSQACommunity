@@ -1,12 +1,11 @@
 package samsonova.parsing;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Parsing {
-    public static void substringsCount(String substring, String filePath) throws FileNotFoundException {
-        int substringsCount = 0;
+    public static void countSubstringInString(String substring, String filePath) throws FileNotFoundException {
+        int substringCount = 0;
 
         try (Scanner scanner = new Scanner(new FileInputStream(filePath))) {
             while (scanner.hasNextLine()) {
@@ -20,32 +19,56 @@ public class Parsing {
                         break;
                     }
 
-                    substringsCount++;
+                    substringCount++;
                     startIndex = index + substring.length();
                 }
             }
         }
 
-        System.out.println("Число вхождений = " + substringsCount);
+        System.out.println("Количество вхождений подстроки = " + substringCount);
     }
 
-    public static void linesCount(String filePath) throws FileNotFoundException {
-        int linesCount = 0;
+    public static void countLines(String filePath) throws IOException {
+        File myFile = new File(filePath);
+        FileReader fileReader = new FileReader(myFile);
+        LineNumberReader lineNumberReader = new LineNumberReader(fileReader);
+
+        int linesNumber = 0;
+
+        while (lineNumberReader.readLine() != null) {
+            linesNumber++;
+        }
+
+        System.out.println("Количество строк = " + linesNumber);
+
+        lineNumberReader.close();
+    }
+
+    public static void countWords(String filePath) throws FileNotFoundException {
+        int wordsCount = 0;
 
         try (Scanner scanner = new Scanner(new FileInputStream(filePath))) {
             while (scanner.hasNextLine()) {
-                linesCount++;
+                String scannedString = scanner.nextLine();
+                int startIndex = 1;
+
+                while (startIndex < scannedString.length()) {
+                    if ((Character.isLetter(scannedString.charAt(startIndex)) && startIndex - 2 == -1)
+                            || (Character.isLetter(scannedString.charAt(startIndex)) &&
+                            Character.isWhitespace(scannedString.charAt(startIndex - 1)))
+                            || (Character.isLetter(scannedString.charAt(startIndex - 1)) && Character.isWhitespace(scannedString.charAt(startIndex)) && startIndex - 2 == -1)) {
+                        wordsCount++;
+                    }
+
+                    startIndex++;
+                }
             }
         }
 
-        System.out.println("Количество строк = " + linesCount);
+        System.out.println("Количество слов = " + wordsCount);
     }
 
-    public static void wordsCount(String filePath) throws FileNotFoundException {
-
-    }
-
-    public static void spacesCount(String filePath) throws FileNotFoundException {
+    public static void countSpaces(String filePath) throws FileNotFoundException {
         int spacesCount = 0;
 
         try (Scanner scanner = new Scanner(new FileInputStream(filePath))) {
@@ -60,7 +83,7 @@ public class Parsing {
             }
         }
 
-        System.out.println("Число пробелов = " + spacesCount);
+        System.out.println("Количество пробелов = " + spacesCount);
     }
 
     public static void printReversedText(String filePath) throws FileNotFoundException {
