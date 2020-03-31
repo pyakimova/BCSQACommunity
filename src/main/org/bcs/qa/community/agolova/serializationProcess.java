@@ -1,15 +1,9 @@
 package agolova;
-import java.io.*;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.codehaus.jackson.JsonEncoding;
-import org.codehaus.jackson.JsonFactory;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonGenerator;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class serializationProcess {
