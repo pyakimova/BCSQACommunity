@@ -10,10 +10,10 @@ public class serializationProcess {
 
     public static void main(String args[]) throws IOException {
 
-        writingGenerationeJson();
+        serializationJson();
     }
 
-    public static void writingGenerationeJson() throws IOException {
+    public static void serializationJson() throws IOException {
         Portfolio portfolio = new Portfolio("Инвестиционное преложение от 30.03.2020",2500000,"RUB","Rational",24,0.14,0.12);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(portfolio);
