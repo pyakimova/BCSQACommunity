@@ -26,10 +26,6 @@ public class ParsingDemo {
 
         System.out.println();
         Parsing.printReversedText(path);
-
-
-
-
-        }
     }
+}
 
