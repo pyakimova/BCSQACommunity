@@ -2,6 +2,7 @@ package org.bcs.qa.community;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -45,14 +46,29 @@ public class RESTRequest {
     }
 
     private void sendPost() throws Exception {
-        String url = "https://www.google.com";
-        URL obj = new URL(url);
-        HttpURLConnection connection = (HttpURLConnection) obj.openConnection();
+        URL url = new URL ("http://example.com/index.php");
+        HttpURLConnection con = (HttpURLConnection)url.openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json; utf-8");
+        con.setRequestProperty("Accept", "application/json");
 
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("User-Agent", USER__AGENT);
-        connection.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
+        con.setDoOutput(true);
+        String jsonInputString = "{\"name\": \"Anton\", \"job\": \"QAengineer\"}";
+        try(OutputStream os = con.getOutputStream()){
+            byte[] input = jsonInputString.getBytes("utf-8");
+            os.write(input, 0, input.length);
+        }
 
+        int code = con.getResponseCode();
+        System.out.println(code);
 
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"))){
+            StringBuilder response = new StringBuilder();
+            String responseLine = null;
+            while ((responseLine = br.readLine()) != null) {
+                response.append(responseLine.trim());
+            }
+            System.out.println(response.toString());
+        }
     }
 }
