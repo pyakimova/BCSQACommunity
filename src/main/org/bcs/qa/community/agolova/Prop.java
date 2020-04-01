@@ -5,13 +5,15 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Prop {
-    public static final String PATH_FILE_PROPERTIES = "C:\\Users\\sasib\\OneDrive\\Documents\\GitHub\\BCSQACommunity1\\src\\main\\org\\bcs\\qa\\community\\agolova\\Resourse\\config.properties";
+    public static final String PATH_FILE_PROPERTIES = "config.properties";
 
-    public static void getProperties(){
+    public static void getProperties(String filePath){
+        filePath = PATH_FILE_PROPERTIES;
+
         FileInputStream fileInputStream;
         Properties property = new Properties();
         try{
-            fileInputStream = new FileInputStream(PATH_FILE_PROPERTIES);
+            fileInputStream = new FileInputStream(filePath);
             property.load(fileInputStream);
             String baseURL = property.getProperty("baseURL");
             String loging = property.getProperty("loging");
@@ -21,14 +23,14 @@ public class Prop {
             System.out.println("URL: " + baseURL + "\nloging: " + loging + "\npassword: " + password + "\npfpId: " + pfpId);
 
         } catch(IOException e){
-            System.out.println("Файла " + PATH_FILE_PROPERTIES + "обнаружено");
+            System.out.println("Файла " + filePath + "обнаружено");
             e.printStackTrace();
 
         }
     }
 
     public static void main(String args[]){
-        getProperties();
+        getProperties(PATH_FILE_PROPERTIES);
     }
 
 }
