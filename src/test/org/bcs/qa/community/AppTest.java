@@ -1,10 +1,8 @@
 package org.bcs.qa.community;
 
-import static org.junit.Assert.assertTrue;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.*;
-
 import org.junit.Test;
+
+import static com.codeborne.selenide.Selenide.open;
 
 /**
  * Unit test for simple App.
