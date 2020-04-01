@@ -13,7 +13,7 @@ public class sendRequests {
         JSONObject requestBody = new JSONObject();
         requestBody.put("proposalName", "Инвестиционное преложение от 30.03.2020");
         requestBody.put("sumOfInvestment", 15000);
-        requestBody.put("currency", "USD");
+        requestBody.put("currency" , "USD");
         requestBody.put("riskProfile", "Conservative");
         requestBody.put("termOfInvestment",24);
         requestBody.put("excpectedReturn", 0.14);
