@@ -99,7 +99,7 @@ public class Parsing {
                     allLinesBuilder = new StringBuilder(scannedString);
                 } else {
                     allLinesBuilder.append(scannedString);
-                }
+            }
             }
 
             assert allLinesBuilder != null;
