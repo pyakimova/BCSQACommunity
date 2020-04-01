@@ -23,7 +23,7 @@ public class FlatJson {
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             String value = entry.getValue();
 
-            if (isDigit(value)) {
+            if (isDigit(value) || value.equals("null")) {
                 allLinesBuilder.append(", ").append("\"").append(entry.getKey()).append("\"").append(" : ").
                         append(entry.getValue());
             } else {
