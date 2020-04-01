@@ -1,0 +1,1 @@
+{"proposalName":"Инвестиционное преложение от 30.03.2020","sumOfInvestment":2500000,"currency":"RUB","riskProfile":"Rational","termOfInvestment":24,"excpectedReturn":0.14,"var":0.12}

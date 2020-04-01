@@ -1,4 +1,4 @@
-package org.bcs.qa.community;
+//package org.bcs.qa.community;
 
 /**
  * Hello world!
@@ -7,6 +7,7 @@ package org.bcs.qa.community;
 public class App 
 {
     public static void main( String[] args )
+
     {
         System.out.println( "Hello World!" );
     }
