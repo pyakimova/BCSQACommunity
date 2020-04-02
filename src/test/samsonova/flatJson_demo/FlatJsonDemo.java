@@ -2,11 +2,11 @@ package samsonova.flatJson_demo;
 
 import samsonova.flat_json.FlatJson;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class FlatJsonDemo {
     public static void main(String[] args) {
-        HashMap<String, String> myHashMap = new HashMap<>();
+        LinkedHashMap<String, String> myHashMap = new LinkedHashMap<>();
         myHashMap.put("property1", "abc");
         myHashMap.put("property2", "def");
         myHashMap.put("property3", "hhh");

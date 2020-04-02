@@ -2,7 +2,7 @@ package samsonova.flat_json;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FlatJson {
@@ -15,7 +15,7 @@ public class FlatJson {
         }
     }
 
-    public static void generateFlatJson(HashMap<String, String> hashMap) {
+    public static void generateFlatJson(LinkedHashMap<String, String> hashMap) {
         String start = "{ ";
         String end = " }";
         StringBuilder allLinesBuilder = new StringBuilder(start);
@@ -35,7 +35,7 @@ public class FlatJson {
         allLinesBuilder.append(end);
         allLinesBuilder.replace(2, 4, "");
 
-        try (FileWriter writer = new FileWriter("src/newJson", false)) {
+        try (FileWriter writer = new FileWriter("src/newJson.json", false)) {
             writer.write(allLinesBuilder.toString());
             writer.flush();
         } catch (
