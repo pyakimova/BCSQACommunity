@@ -68,5 +68,3 @@ public class MyPropReader {
         }
     }
 }
-//    Реализовать метод getProperties(String propName, String filePath) который будет читать свойство из указанного файла
-//    Реализовать метод getProperties(String propName) который будет читать свойство из дефолтного файла

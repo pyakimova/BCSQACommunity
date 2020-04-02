@@ -2,7 +2,6 @@ package samsonova.flat_json;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FlatJson {
@@ -15,10 +14,14 @@ public class FlatJson {
         }
     }
 
-    public static void generateFlatJson(LinkedHashMap<String, String> hashMap) {
-        String start = "{ ";
-        String end = " }";
-        StringBuilder allLinesBuilder = new StringBuilder(start);
+    public static void generateFlatJson(Map<String, String> hashMap) {
+        final int REPLACEMENT_START_INDEX = 2;
+        final int REPLACEMENT_END_INDEX = 4;
+        String startJson = "{ ";
+        String endJson = " }";
+        String replaceStartComma = "";
+
+        StringBuilder allLinesBuilder = new StringBuilder(startJson);
 
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             String value = entry.getValue();
@@ -32,8 +35,8 @@ public class FlatJson {
             }
         }
 
-        allLinesBuilder.append(end);
-        allLinesBuilder.replace(2, 4, "");
+        allLinesBuilder.append(endJson);
+        allLinesBuilder.replace(REPLACEMENT_START_INDEX, REPLACEMENT_END_INDEX, replaceStartComma);
 
         try (FileWriter writer = new FileWriter("src/newJson.json", false)) {
             writer.write(allLinesBuilder.toString());
@@ -44,6 +47,3 @@ public class FlatJson {
         }
     }
 }
-
-
-

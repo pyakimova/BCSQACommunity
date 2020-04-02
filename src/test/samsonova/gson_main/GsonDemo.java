@@ -50,17 +50,17 @@ public class GsonDemo {
 
         //setting parameter value
         String resultingJson1 = GsonClass.setParameterValue("firstName", "Jeanne", json2);
-        GsonClass.writeJsonToFile (resultingJson1, "src/out1.json");
+        GsonClass.writeJsonToFile(resultingJson1, "src/out1.json");
         System.out.println(GsonClass.getParameterValue("firstName", json2));
 
         //deleting parameter
         String resultingJson2 = GsonClass.deleteParameter("firstName", json2);
-        GsonClass.writeJsonToFile (resultingJson2, "src/out2.json");
+        GsonClass.writeJsonToFile(resultingJson2, "src/out2.json");
         System.out.println(json2);
 
         //adding new parameter
         String resultingJson3 = GsonClass.setParameterValue("newParam", "something", json2);
-        GsonClass.writeJsonToFile (resultingJson3, "src/out3.json");
+        GsonClass.writeJsonToFile(resultingJson3, "src/out3.json");
         System.out.println(GsonClass.getParameterValue("firstName", json2));
     }
 }

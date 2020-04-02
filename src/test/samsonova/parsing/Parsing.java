@@ -99,7 +99,7 @@ public class Parsing {
                     allLinesBuilder = new StringBuilder(scannedString);
                 } else {
                     allLinesBuilder.append(scannedString);
-            }
+                }
             }
 
             assert allLinesBuilder != null;
@@ -112,9 +112,3 @@ public class Parsing {
         System.out.println(buffer);
     }
 }
-
-
-//    Реализовать метод, который будет парсить указанный файл
-//1. Посчитает колличество вхождений переданной строки
-//        2. Посчитает колличество строк / слов / пробелов
-//        3. Выведет текст в обратном порядке
