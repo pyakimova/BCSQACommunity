@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class DropBox {
+public class DropBox{
     static WebDriver driver;
 
     public static void main(String[] args){
@@ -20,27 +20,20 @@ public class DropBox {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://www.oracle.com/technetwork/java/javase/downloads/jdk13-downloads-5672538.html");
         String mainWindow = driver.getWindowHandle();
-
         WebElement link = driver.findElement(By.xpath("//th//a[contains(., \"Oracle Technology Network License Agreement for Oracle Java SE\")]"));
-
         link.click();
-
         for(String windowHandle : driver.getWindowHandles()){
             driver.switchTo().window(windowHandle);
         }
 
         WebElement button = driver.findElement(By.xpath("//a[contains(., \"Home\")]"));
-
         button.click();
-
         driver.switchTo().window(mainWindow);
         WebElement downloadButton = driver.findElement(By.xpath("//a[@href=\"/technetwork/java/javase/overview/index.html\"]"));
         downloadButton.click();
-
         System.out.println(downloadButton.getText());
         //Actions action = new Actions(driver);
         //action.click(downloadButton).build().perform();
-
         // action.moveToElement(element);
         // action.moveToElement(element).build().perform();
         //setPointInList("Показать");
