@@ -4,15 +4,17 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 public class RandomStringGenerator {
     public static void main(String[] args) {
-        System.out.println("Generate string:");
+        System.out.println("Generated string:");
         generator();
     }
 
     public static void generator() {
-        String generatedString = RandomStringUtils.randomAlphanumeric(10);
+        String generatedStringFirstName = RandomStringUtils.randomAlphanumeric(10);
+        String generatedStringLastName = RandomStringUtils.randomAlphanumeric(10);
 
-        System.out.println(generatedString);
+        System.out.println(generatedStringFirstName + "," + " " +  generatedStringLastName);
     }
 }
+
 
 //Реализовать метод, который будет генерировать рандомное значение String
