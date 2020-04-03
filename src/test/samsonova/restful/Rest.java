@@ -1,6 +1,7 @@
 package samsonova.restful;
 
 public class Rest {
+
 }
 
 

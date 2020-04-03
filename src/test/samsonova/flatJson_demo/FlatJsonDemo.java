@@ -14,6 +14,6 @@ public class FlatJsonDemo {
         myHashMap.put("property4", "222");
         myHashMap.put("property5", "null");
 
-        FlatJson.generateFlatJson(myHashMap);
+        FlatJson.generateFlatJson(myHashMap);  //src.newJson.json
     }
 }
