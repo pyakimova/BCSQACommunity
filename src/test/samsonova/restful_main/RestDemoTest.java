@@ -1,22 +1,23 @@
 package samsonova.restful_main;
 
-import io.restassured.response.Response;
-import org.json.JSONException;
-import org.junit.Test;
-
-import static io.restassured.RestAssured.get;
+import samsonova.restful.Rest;
 
 public class RestDemoTest {
-    @Test
-    public void getRequestExampleTest() throws JSONException {
-        Response response = get("http://google.com");
-//        JSONArray jsonResponse = new JSONArray(response.asString());
-//        String capital = jsonResponse.getJSONObject(0).getString("capital");
-       // Assert.assertEquals(responseCode, 200);
+    public static void main(String[] args) throws Exception {
+        Rest rest = new Rest();
+
+        //returns response body
+        rest.get("https://www.google.com");
+
+        //returns response body as file with predefined path
+        rest.getResponseAsFile("https://www.google.com");
+
+        //request with predefined URL
+        System.out.println("Send Http GET request: ");
+        rest.sendGet();
+
+        //request with predefined URL
+        System.out.println("Send Http POST request: ");
+        rest.sendPost();
     }
-
-
-
-    }
-
-
+}
