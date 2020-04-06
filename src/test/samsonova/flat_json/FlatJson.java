@@ -46,4 +46,34 @@ public class FlatJson {
             System.out.println(ex.getMessage());
         }
     }
+
+    public static void generateFlatJson1(String[] objectFields, String[] fieldsValues) {
+        final int REPLACEMENT_START_INDEX = 2;
+        final int REPLACEMENT_END_INDEX = 4;
+        String startJson = "{ ";
+        String endJson = " }";
+        String replaceStartComma = "";
+        StringBuilder allLinesBuilder = new StringBuilder(startJson);
+
+        for (int i = 0; i < objectFields.length; i++) {
+            if (isDigit(fieldsValues[i]) || fieldsValues[i].equals("null")) {
+                allLinesBuilder.append(", ").append("\"").append(objectFields[i]).append("\"").append(" : ").
+                        append(fieldsValues[i]);
+            } else {
+                allLinesBuilder.append(", ").append("\"").append(objectFields[i]).append("\"").append(" : ").append("\"").
+                        append(fieldsValues[i]).append("\"");
+            }
+        }
+
+        allLinesBuilder.append(endJson);
+        allLinesBuilder.replace(REPLACEMENT_START_INDEX, REPLACEMENT_END_INDEX, replaceStartComma);
+
+        try (FileWriter writer = new FileWriter("src/newJson1.json", false)) {
+            writer.write(allLinesBuilder.toString());
+            writer.flush();
+        } catch (
+                IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 }

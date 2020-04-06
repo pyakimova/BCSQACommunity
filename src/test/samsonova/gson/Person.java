@@ -4,13 +4,16 @@ public class Person {
     private String firstName;
     private String lastName;
     private String birthdate;
-    private int age;
+    private String age;
 
-    public Person(String firstName, String lastName, String birthdate, int age) {
+    public Person(String firstName, String lastName, String birthdate, String age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthdate = birthdate;
         this.age = age;
+    }
+
+    public Person() {
     }
 
     public String getFirstName() {
