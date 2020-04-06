@@ -16,9 +16,9 @@ public class FlatJsonDemo {
 
         FlatJson.generateFlatJson(myHashMap);  // src/newJson.json
 
-        String[] fields = new String[]{"firstName", "lastName", "birthDate", "age"};
+        String[] parameters = new String[]{"firstName", "lastName", "birthDate", "age"};
         String[] values = new String[]{"Anna", "Ivanova", "null", "23"};
 
-        FlatJson.generateFlatJson1(fields, values); //src/newJson1.json
+        FlatJson.generateFlatJson1(parameters, values); //src/newJson1.json
     }
 }

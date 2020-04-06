@@ -43,24 +43,32 @@ public class GsonDemo {
         //getting parameter value
         Person person2 = new Person("Jane", "Doe", "03.03.1991", "29");
         String json2 = gson.toJson(person2);
-
-        System.out.println(GsonClass.getParameterValue("age", json2));
-        System.out.println(GsonClass.getParameterValue("firstName", json2));
-        System.out.println(GsonClass.getParameterValue("firsName", json2));
+        String age = "age";
+        String firstName = "firstName";
+        String lastName = "lastName";
+        System.out.println(GsonClass.getParameterValue(age, json2));
+        System.out.println(GsonClass.getParameterValue(firstName, json2));
+        System.out.println(GsonClass.getParameterValue(lastName, json2));
 
         //setting parameter value
-        String resultingJson1 = GsonClass.setParameterValue("firstName", "Jeanne", json2);
-        GsonClass.writeJsonToFile(resultingJson1, "src/out1.json");
-        System.out.println(GsonClass.getParameterValue("firstName", json2));
+        String newValue1 = "Jeanne";
+        String filePath1 = "src/out1.json";
+        String resultingJson1 = GsonClass.setParameterValue(firstName, newValue1, json2);
+        GsonClass.writeJsonToFile(resultingJson1, filePath1);
+        System.out.println(GsonClass.getParameterValue(firstName, json2));
 
         //deleting parameter
-        String resultingJson2 = GsonClass.deleteParameter("firstName", json2);
-        GsonClass.writeJsonToFile(resultingJson2, "src/out2.json");
+        String filePath2 = "src/out2.json";
+        String resultingJson2 = GsonClass.deleteParameter(firstName, json2);
+        GsonClass.writeJsonToFile(resultingJson2, filePath2);
         System.out.println(json2);
 
         //adding new parameter
-        String resultingJson3 = GsonClass.setParameterValue("newParam", "something", json2);
-        GsonClass.writeJsonToFile(resultingJson3, "src/out3.json");
-        System.out.println(GsonClass.getParameterValue("firstName", json2));
+        String newParameter = "newParam";
+        String newValue2 = "something";
+        String filePath3 = "src/out3.json";
+        String resultingJson3 = GsonClass.setParameterValue(newParameter, newValue2, json2);
+        GsonClass.writeJsonToFile(resultingJson3, filePath3);
+        System.out.println(GsonClass.getParameterValue(firstName, json2));
     }
 }
