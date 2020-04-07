@@ -17,14 +17,12 @@ public class ParsingDemo {
 
         Parsing.countSubstringInString(searchedString, path);
 
-        System.out.println();
         Parsing.countWords(path);
 
         Parsing.countLines(path);
 
         Parsing.countSpaces(path);
 
-        System.out.println();
         Parsing.printReversedText(path);
     }
 }

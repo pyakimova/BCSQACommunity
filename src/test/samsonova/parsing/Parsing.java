@@ -25,7 +25,7 @@ public class Parsing {
             }
         }
 
-        System.out.println("Количество вхождений подстроки = " + substringCount);
+        System.out.println("Количество вхождений подстроки = " + substringCount + System.lineSeparator());
     }
 
     public static void countLines(String filePath) throws IOException {
@@ -39,7 +39,7 @@ public class Parsing {
             linesNumber++;
         }
 
-        System.out.println("Количество строк = " + linesNumber);
+        System.out.println("Количество строк = " + linesNumber + System.lineSeparator());
 
         lineNumberReader.close();
     }
@@ -65,7 +65,7 @@ public class Parsing {
             }
         }
 
-        System.out.println("Количество слов = " + wordsCount);
+        System.out.println("Количество слов = " + wordsCount + System.lineSeparator());
     }
 
     public static void countSpaces(String filePath) throws FileNotFoundException {
@@ -83,7 +83,7 @@ public class Parsing {
             }
         }
 
-        System.out.println("Количество пробелов = " + spacesCount);
+        System.out.println("Количество пробелов = " + spacesCount + System.lineSeparator());
     }
 
     public static void printReversedText(String filePath) throws FileNotFoundException {

@@ -25,13 +25,13 @@ public class FlatJson {
 
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             String value = entry.getValue();
-
+            String key = entry.getKey();
             if (isDigit(value) || value.equals("null")) {
-                allLinesBuilder.append(", ").append("\"").append(entry.getKey()).append("\"").append(" : ").
-                        append(entry.getValue());
+                allLinesBuilder.append(", ").append("\"").append(key).append("\"").append(" : ").
+                        append(value);
             } else {
-                allLinesBuilder.append(", ").append("\"").append(entry.getKey()).append("\"").append(" : ").append("\"").
-                        append(entry.getValue()).append("\"");
+                allLinesBuilder.append(", ").append("\"").append(key).append("\"").append(" : ").
+                        append("\"").append(value).append("\"");
             }
         }
 
@@ -60,8 +60,8 @@ public class FlatJson {
                 allLinesBuilder.append(", ").append("\"").append(objectFields[i]).append("\"").append(" : ").
                         append(fieldsValues[i]);
             } else {
-                allLinesBuilder.append(", ").append("\"").append(objectFields[i]).append("\"").append(" : ").append("\"").
-                        append(fieldsValues[i]).append("\"");
+                allLinesBuilder.append(", ").append("\"").append(objectFields[i]).append("\"").append(" : ").
+                        append("\"").append(fieldsValues[i]).append("\"");
             }
         }
 

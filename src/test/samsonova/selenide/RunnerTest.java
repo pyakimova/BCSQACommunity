@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         strict = false,
         snippets = CucumberOptions.SnippetType.UNDERSCORE
-//        name = "^Успешное|Успешная.*"
+        //name = "^Успешное|Успешная.*"
 )
 public class RunnerTest {
 }
