@@ -1,5 +1,6 @@
-package agolova2.pages;
+package agolova2.pagesDescription;
 
+import agolova2.pages.CorePage;
 import com.codeborne.selenide.SelenideElement;
 
 import jdk.jfr.Name;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 @Name("Ипотека Вторичное жилье")
 
-public class MortgageMain extends CorePage{
+public class MortgageMain extends CorePage {
 
     @Name("Быстрый переход: частным лицам")
     @FindBy(xpath="//div[@class=\"padding-slim\"]/*[contains(text(), \"Частным лицам\")]")

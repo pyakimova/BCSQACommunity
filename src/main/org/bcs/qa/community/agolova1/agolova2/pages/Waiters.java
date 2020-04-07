@@ -1,7 +1,6 @@
 package agolova2.pages;
 
 import com.codeborne.selenide.SelenideElement;
-
 import java.util.Arrays;
 import java.util.Collection;
 import com.codeborne.selenide.Condition;
