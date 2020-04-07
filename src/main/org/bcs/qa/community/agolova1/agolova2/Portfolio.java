@@ -1,4 +1,4 @@
-package agolova;
+package agolova2;
 
 public class Portfolio {
     private String proposalName;

@@ -1,4 +1,4 @@
-package agolova.pageObjectsSelenium;
+package agolova2.pageObjectsSelenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -43,9 +43,9 @@ public class LoginPage {
         return driver.findElement(incorrectLofinText).getText();
     }
 
-    public SignUpPage creatingAnAccount(){
+    public agolova2.pageObjectsSelenium.SignUpPage creatingAnAccount(){
         driver.findElement(createAnAccountButton).click();
-        return new SignUpPage(driver);
+        return new agolova2.pageObjectsSelenium.SignUpPage(driver);
     }
 
 }

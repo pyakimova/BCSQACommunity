@@ -1,16 +1,15 @@
-package agolova.pages;
+package agolova2.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-
-import jdk.internal.joptsimple.internal.Reflection;
 import jdk.jfr.Name;
-
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Stream;
-import static agolova.PropertyLoader.loadProperty;
+import static agolova2.PropertyLoader.loadProperty;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;

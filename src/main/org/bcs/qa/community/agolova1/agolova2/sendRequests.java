@@ -1,4 +1,4 @@
-package agolova;
+package agolova2;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -27,7 +27,6 @@ public class sendRequests {
         int statusCode = response.getStatusCode();
         System.out.println(statusCode);
     }
-
 
     public void sendGetRequest() {
         String link = "здесь ссыль";

@@ -1,4 +1,4 @@
-package agolova;
+package agolova2;
 
 import jdk.nashorn.internal.parser.JSONParser;
 import org.json.JSONObject;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class getJsonParameter{
+public class GetJsonParameter {
 
     public static void main(String args[]) throws IOException {
 

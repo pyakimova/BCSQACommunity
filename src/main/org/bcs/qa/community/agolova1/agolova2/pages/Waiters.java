@@ -1,4 +1,4 @@
-package agolova.pages;
+package agolova2.pages;
 
 import com.codeborne.selenide.SelenideElement;
 

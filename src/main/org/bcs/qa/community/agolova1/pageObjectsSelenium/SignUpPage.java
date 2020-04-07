@@ -1,4 +1,4 @@
-package agolova.pageObjectsSelenium;
+package agolova2.pageObjectsSelenium;
 
 import org.openqa.selenium.WebDriver;
 

@@ -1,4 +1,4 @@
-package agolova;
+package agolova2;
 
 public class RandomString {
     static String getAlphaNumericString(int n)
