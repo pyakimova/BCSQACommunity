@@ -1,4 +1,4 @@
-package bcs.qa.community.pages;
+package org.bcs.qa.community.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
