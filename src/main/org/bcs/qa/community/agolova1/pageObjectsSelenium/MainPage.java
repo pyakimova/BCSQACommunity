@@ -17,19 +17,19 @@ public class MainPage{
     private By userPasswordInput = By.id("user[password]");
     private By signUpButtonInForm = By.xpath("//button[contains(.,\"Sign up for GitHub\")]");
 
-    public LoginPage clickSignIn(){
+    public agolova2.pageObjectsSelenium.LoginPage clickSignIn(){
         driver.findElement(signInButton).click();
-        return new LoginPage(driver);
+        return new agolova2.pageObjectsSelenium.LoginPage(driver);
     }
 
-    public SignUpPage clickSignUp(){
+    public agolova2.pageObjectsSelenium.SignUpPage clickSignUp(){
         driver.findElement(signUpButton).click();
-        return new SignUpPage(driver);
+        return new agolova2.pageObjectsSelenium.SignUpPage(driver);
     }
 
-    public SignUpPage clickSignUpBettonInForm(){
+    public agolova2.pageObjectsSelenium.SignUpPage clickSignUpBettonInForm(){
         driver.findElement(signUpButtonInForm).click();
-        return new SignUpPage(driver);
+        return new agolova2.pageObjectsSelenium.SignUpPage(driver);
     }
 
     public MainPage inputLogin(String username){
@@ -47,12 +47,12 @@ public class MainPage{
         return this;
     }
 
-    public SignUpPage registre(String username,String email,String password){
+    public agolova2.pageObjectsSelenium.SignUpPage registre(String username, String email, String password){
         this.inputLogin(username);
         this.inputUserEmailInput(email);
         this.inputUserPasswordInput(password);
         this.clickSignUpBettonInForm();
-        return new SignUpPage(driver);
+        return new agolova2.pageObjectsSelenium.SignUpPage(driver);
     }
 
 }

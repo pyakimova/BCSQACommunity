@@ -32,6 +32,8 @@ public class DropBox{
         WebElement downloadButton = driver.findElement(By.xpath("//a[@href=\"/technetwork/java/javase/overview/index.html\"]"));
         downloadButton.click();
         System.out.println(downloadButton.getText());
+
+        //ДЕЛАЕМ ХОВЕР
         //Actions action = new Actions(driver);
         //action.click(downloadButton).build().perform();
         // action.moveToElement(element);
