@@ -28,4 +28,3 @@ public class ParsingDemo {
         Parsing.printReversedText(path);
     }
 }
-
