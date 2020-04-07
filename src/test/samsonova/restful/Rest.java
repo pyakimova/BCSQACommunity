@@ -23,7 +23,7 @@ public class Rest {
                 client.send(request, HttpResponse.BodyHandlers.ofString());
 
         System.out.println("Status code = " + response.statusCode());
-        System.out.println("Response = " + response.body() + "\n");
+        System.out.println("Response = " + response.body() + System.lineSeparator());
     }
 
     public void getResponseAsFile(String uri) throws Exception {
@@ -36,7 +36,7 @@ public class Rest {
                 client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get("src/body.txt")));
 
         System.out.println("Status code = " + response.statusCode());
-        System.out.println("Response in file: " + response.body() + "\n");
+        System.out.println("Response in file: " + response.body() + System.lineSeparator());
     }
 
     public void post(String uri, String data) throws Exception {
@@ -47,7 +47,7 @@ public class Rest {
                 .build();
 
         HttpResponse<?> response = client.send(request, HttpResponse.BodyHandlers.discarding());
-        System.out.println("Status code = " + response.statusCode() + "\n");
+        System.out.println("Status code = " + response.statusCode() + System.lineSeparator());
     }
 
     private final HttpClient httpClient = HttpClient.newBuilder()

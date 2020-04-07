@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class FlatJsonDemo {
     public static void main(String[] args) {
+        //1st method
         Map<String, String> myHashMap = new LinkedHashMap<>();
         myHashMap.put("property1", "abc");
         myHashMap.put("property2", "def");
@@ -16,6 +17,7 @@ public class FlatJsonDemo {
 
         FlatJson.generateFlatJson(myHashMap);  // src/newJson.json
 
+        //2nd method
         String[] parameters = new String[]{"firstName", "lastName", "birthDate", "age"};
         String[] values = new String[]{"Anna", "Ivanova", "null", "23"};
 
