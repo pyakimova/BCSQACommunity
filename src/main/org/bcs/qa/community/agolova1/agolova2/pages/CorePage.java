@@ -2,10 +2,7 @@ package agolova2.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-
 import jdk.jfr.Name;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Stream;
